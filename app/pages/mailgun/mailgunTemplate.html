@@ -1,0 +1,18 @@
+<div ng-controller="mailgun" ng-cloak ng-init="init()">
+    <ion-content show-header="true" show-footer="true" show-top-tabs="true" show-tabs="true"
+    overflow-scroll="false">
+        <div class="item item-input">
+            <input type="text" placeholder="To email" value="" ng-model="email.to">
+        </div>
+        <div class="item item-input">
+            <input type="text" placeholder="Subject" value="" ng-model="email.subject">
+        </div>
+        <label class="item item-input">
+            <textarea placeholder="Body" ng-model="email.body"></textarea>
+        </label>
+        <button class="button button-positive button-full icon-right ion-chevron-right"
+        ng-click="sendEmail()">
+            Send email
+        </button>
+    </ion-content>
+</div>

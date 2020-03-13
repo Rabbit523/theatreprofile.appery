@@ -1,0 +1,117 @@
+
+
+
+
+<div id="app/modals/SelectUser/SelectUserTemplate.html"  type="text/ng-template">
+    <ion-modal-view class="modalUser" ng-controller="SelectUserController" ng-init="init()" >
+
+    <ion-content 
+                 
+                 locking="false"
+                 padding="true"
+                 
+                 overflow-scroll=""
+                 scrollbar-x="false"
+                 
+                 
+                 
+                 
+                 
+                 has-bouncing="false"
+                 
+                 
+                 class="modalUser-content">
+
+
+    
+
+
+<div class="search-box item item-input" >
+        <i class="icon ion-search balanced placeholder-icon"></i>
+    <input type="text"
+           placeholder="Enter Email Here"
+           value=""
+           ng-keypress="Search($event)" ng-model="searchVal.val" >
+</div>
+
+
+    <div  >
+
+
+<div class="row item-row" ng-repeat="seluser in seluserlist | filter:searchVal.val" >
+
+<div class="col item-username col-80" >
+
+
+
+    <div  class="list" >
+
+
+
+
+
+
+
+
+
+    <div  class="item no-border" >
+
+
+            <p></p>
+
+        {{seluser.username}} ({{seluser.email}})
+
+
+
+    </div>
+
+    </div>
+
+</div>
+
+<div class="col item-check col-20" >
+<ion-checkbox ng-click="checked(seluser.id)"  class="check-item">&nbsp;</ion-checkbox>
+
+</div>
+</div>
+    </div>
+
+
+
+<button class="modalUser-send button button-balanced button-inline button-outline icon-left ion-paper-airplane" ng-click="send()" >
+        Send
+</button>
+
+    </ion-content>
+
+        
+        
+
+        
+    <ion-header-bar  class="bar bar-balanced" >
+        
+
+        
+            <div class="buttons"  >
+            </div>
+
+        
+            <h1 class="title">Select User</h1>
+            
+
+        
+            <div class="buttons pull-right"  >
+
+
+
+<button class="button button-icon button-inline icon ion-close" ng-click="modal.hide()" >
+</button>
+
+            </div>
+
+    </ion-header-bar>
+
+
+
+    </ion-modal-view>
+</div>
